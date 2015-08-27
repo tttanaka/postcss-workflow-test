@@ -12,8 +12,7 @@ gulp.task('css', function () {
     .pipe(sourcemaps.init())
     .pipe(postcss([
             autoprefixer({ browsers: ['last 3 versions'] }),
-            rucksack(),
-            precss
+            rucksack()
           ]))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./build/css'));
