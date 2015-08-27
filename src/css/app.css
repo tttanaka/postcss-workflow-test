@@ -1,0 +1,14 @@
+@alias {
+  fs: font-size;
+  br: border-radius;
+}
+
+$fontColor = #ff0000;
+
+#wrapper {
+  fs: 15px;
+  br: 5px 5px 10px 3px;
+  display: flex;
+  color: rgba(#ff0000, 0.5);
+  background-color: $fontColor;
+}
