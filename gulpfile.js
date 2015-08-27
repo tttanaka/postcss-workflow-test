@@ -14,8 +14,14 @@ var handleErrors = require('./handleErrors');
 gulp.task('styles', function() {
   var processors = [
     csswring(),
-    autoprefixer({browsers:['last 2 version']}),
-    cssnext({}),
+    autoprefixer({
+      browsers:['last 2 version']
+    }),
+    cssnext({
+      customProperties: true,
+      colorFunction: true,
+      customSelectors: true
+    }),
     rucksack(),
   ];
 
