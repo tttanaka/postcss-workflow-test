@@ -17,6 +17,8 @@
     "gulp-postcss": "^6.0.0",
     "gulp-rucksack": "^0.1.2",
     "gulp-sourcemaps": "^1.5.2",
+    "postcss-import": "^7.0.0",
+    "postcss-url": "^4.0.1",
     "precss": "^0.3.0",
     "rucksack-css": "^0.6.7"
   }

@@ -8,6 +8,7 @@
   fs: var(--fontSize);
   br: 5px 5px 10px 3px;
   display: flex;
-  color: var(--primaryColor);
+  /*color: var(--primaryColor);*/
   background-color: rgba(var(--secondaryColor),0.2);
+  color: color(var(--secondaryColor),lightness(25%));
 }
