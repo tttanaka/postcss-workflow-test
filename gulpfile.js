@@ -5,7 +5,8 @@ var gulp          = require('gulp'),
     autoprefixer  = require('autoprefixer-core'),
     rucksack      = require('rucksack-css'),
     precss        = require('precss'),
-    sourcemaps    = require('gulp-sourcemaps');
+    sourcemaps    = require('gulp-sourcemaps'),
+    cssnext       = '';
 
 gulp.task('css', function () {
   return gulp.src('./src/css/*.css')
