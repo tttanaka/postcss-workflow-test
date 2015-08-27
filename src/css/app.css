@@ -1,14 +1,18 @@
+@import "../../bower_components/normalize.css/normalize.css";
+
 :root { /* top level variables */
-  --fontSize: 1rem;
-  --primaryColor: red;
-  --secondaryColor: #0000ff;
+  --fontSize: 1rem; /* usage: font-size: var(--fontSize); */
 }
 
-#wrapper {
-  fs: var(--fontSize);
-  br: 5px 5px 10px 3px;
-  display: flex;
-  /*color: var(--primaryColor);*/
-  background-color: rgba(var(--secondaryColor),0.2);
-  color: color(var(--secondaryColor),lightness(25%));
+* {
+  outline: 1px dashed #ccc;
 }
+.wrapper {
+  lost-center: 980px;
+  height: 100%;
+}
+#head {
+  clear: fix;
+  width: 100%;
+}
+

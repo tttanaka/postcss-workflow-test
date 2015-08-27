@@ -1,0 +1,22 @@
+{
+  "name": "postcss-workflow-test",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tttanaka/postcss-workflow-test",
+  "authors": [
+    "Tyler <tyler@future-ink.com>"
+  ],
+  "description": "postcss workflow test",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}
