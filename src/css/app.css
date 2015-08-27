@@ -1,14 +1,13 @@
-@alias {
-  fs: font-size;
-  br: border-radius;
+:root { /* top level variables */
+  --fontSize: 1rem;
+  --primaryColor: red;
+  --secondaryColor: #0000ff;
 }
 
-$fontColor = #ff0000;
-
 #wrapper {
-  fs: 15px;
+  fs: var(--fontSize);
   br: 5px 5px 10px 3px;
   display: flex;
-  color: rgba(#ff0000, 0.5);
-  background-color: $fontColor;
+  color: var(--primaryColor);
+  background-color: rgba(var(--secondaryColor),0.2);
 }

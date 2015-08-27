@@ -1,20 +1,39 @@
-'use strict';
+var dest = "./build";
+var src = './src';
 
-var gulp          = require('gulp'),
-    postcss       = require('gulp-postcss'),
-    autoprefixer  = require('autoprefixer-core'),
-    rucksack      = require('rucksack-css'),
-    precss        = require('precss'),
-    sourcemaps    = require('gulp-sourcemaps'),
-    cssnext       = '';
+var gulp = require('gulp'),
+    postcss = require('gulp-postcss'),
+    csswring = require('csswring'),
+    cssnext = require('cssnext'), //minify css
+    autoprefixer = require('autoprefixer-core'),
+    rucksack = require('rucksack-css'),
+    sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('css', function () {
-  return gulp.src('./src/css/*.css')
+var handleErrors = require('./handleErrors');
+
+gulp.task('styles', function() {
+  var processors = [
+    csswring(),
+    autoprefixer({browsers:['last 2 version']}),
+    cssnext({}),
+    rucksack(),
+  ];
+
+  return gulp.src('./src/css/**/*.css')
     .pipe(sourcemaps.init())
-    .pipe(postcss([
-            autoprefixer({ browsers: ['last 3 versions'] }),
-            rucksack()
-          ]))
+    .pipe(postcss(processors))
+    .on('error', handleErrors)
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./build/css'));
+    .pipe(gulp.dest(dest + '/css'));
+});
+
+gulp.task('markup', function() {
+  return gulp.src(src + '/htdocs/**/*.html')
+    .pipe(gulp.dest(dest));
+});
+
+
+gulp.task('watch', function() {
+  gulp.watch(src + '/css/**/*.css', ['styles']);
+  gulp.watch(src + '/htdocs/**/*.html', ['markup']);
 });

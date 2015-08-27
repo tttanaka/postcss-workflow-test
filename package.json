@@ -10,7 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
+    "cssnext": "^1.8.4",
+    "csswring": "^3.0.7",
     "gulp": "^3.9.0",
+    "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.0.0",
     "gulp-rucksack": "^0.1.2",
     "gulp-sourcemaps": "^1.5.2",
