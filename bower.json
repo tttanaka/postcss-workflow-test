@@ -18,5 +18,8 @@
   ],
   "dependencies": {
     "normalize.css": "~3.0.3"
+  },
+  "devDependencies": {
+    "HTML5-Reset": "~2.1.3"
   }
 }

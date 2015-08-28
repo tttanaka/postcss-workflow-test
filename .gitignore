@@ -1,3 +1,5 @@
 node_modules
-build
 bower_components
+src/vendor
+build
+dist
