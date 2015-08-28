@@ -20,6 +20,9 @@
     "gulp-sourcemaps": "^1.5.2",
     "lost": "^6.5.0",
     "postcss-import": "^7.0.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-nested-props": "^1.0.0",
+    "postcss-nesting": "^0.1.0",
     "postcss-url": "^4.0.1",
     "precss": "^0.3.0",
     "rucksack-css": "^0.6.7"

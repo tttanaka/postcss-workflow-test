@@ -2,16 +2,21 @@ var dest  = "./build";
 var src   = './src';
 
 var gulp          = require('gulp'),
-    postcss       = require('gulp-postcss'),
-    csswring      = require('csswring'),
-    cssnext       = require('cssnext'), //minify css
-    autoprefixer  = require('autoprefixer-core'),
-    rucksack      = require('rucksack-css'),
-    sourcemaps    = require('gulp-sourcemaps'),
-    lost          = require('lost'),
-    atImport      = require('postcss-import'),
+    postcss       = require('gulp-postcss'), 
+    csswring      = require('csswring'), // minify css
+    cssnext       = require('cssnext'), // future css today
+    autoprefixer  = require('autoprefixer-core'), // autoprefix css
+    rucksack      = require('rucksack-css'), // helpers
+    sourcemaps    = require('gulp-sourcemaps'), // css sourcemaps
+    lost          = require('lost'), // grid system
+    atImport      = require('postcss-import'), // css imports
     //url = require('postcss-url');
-    browserSync   = require('browser-sync');
+    //nestedProps = require('postcss-nested-props'), //nest common props
+    nested        = require('postcss-nested'), // sass-style nesting 1.0.0
+    //nesting = require('postcss-nesting'); // w3c extra {} nesting 0.1.0
+    browserSync   = require('browser-sync'); // sync
+
+    // test boilerplate: boy - corysimmons
     
 
 var handleErrors = require('./handleErrors');
@@ -19,17 +24,18 @@ var handleErrors = require('./handleErrors');
 gulp.task('styles', function() {
   var processors = [
     atImport(),
-    csswring(),
-    autoprefixer({
-      browsers:['last 2 version']
-    }),
     cssnext({
       customProperties: true,
       colorFunction: true,
       customSelectors: true
     }),
     rucksack(),
-    lost()
+    lost(),
+    nested(),
+    autoprefixer({
+      browsers:['last 2 version']
+    }),
+    //csswring(),
   ];
 
   return gulp.src('./src/css/app.css')
