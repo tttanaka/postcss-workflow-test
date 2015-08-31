@@ -2,8 +2,8 @@ var config        = require('../config').css;
 var handleErrors  = require('../util/handleErrors');
 
 var gulp          = require('gulp'),
+    browserSync = require('browser-sync'),
     postcss       = require('gulp-postcss'),
-    //csswring      = require('csswring'), // minify css
     cssnext       = require('cssnext'), // future css today
     autoprefixer  = require('autoprefixer-core'), // autoprefix css
     rucksack      = require('rucksack-css'), // helpers
@@ -24,7 +24,6 @@ gulp.task('css', function() {
     lost(),
     nested(),
     autoprefixer(config.settings.autoprefixer),
-    //csswring()
   ];
 
   return gulp.src(config.src)
@@ -32,6 +31,6 @@ gulp.task('css', function() {
     .pipe(postcss(processors))
     .on('error', handleErrors)
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(config.dest));
-    //.pipe(browserSync.stream());
+    .pipe(gulp.dest(config.dest))
+    .pipe(browserSync.stream());
 });
