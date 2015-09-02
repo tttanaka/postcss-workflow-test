@@ -2,7 +2,7 @@ var config        = require('../config').css;
 var handleErrors  = require('../util/handleErrors');
 
 var gulp          = require('gulp'),
-    browserSync = require('browser-sync'),
+    browserSync   = require('browser-sync'),
     postcss       = require('gulp-postcss'),
     cssnext       = require('cssnext'), // future css today
     autoprefixer  = require('autoprefixer-core'), // autoprefix css
