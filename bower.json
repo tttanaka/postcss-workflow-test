@@ -17,7 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "polymer": "Polymer/polymer#1.0.0"
   },
   "devDependencies": {
     "HTML5-Reset": "~2.1.3"
