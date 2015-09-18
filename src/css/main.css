@@ -10,13 +10,16 @@
 * {
   outline: 1px dashed #ccc;
 }
+body {
+  background: #ccc;
+}
 .wrapper {
   lost-center: 980px;
   height: 100%;
 }
 #head {
   clear: fix;
-  width: 100%;
+  lost-column: 1/2;
 
   nav {
     background-color: #fff;

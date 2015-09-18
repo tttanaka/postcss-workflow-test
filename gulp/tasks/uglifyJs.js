@@ -5,7 +5,7 @@ var rename      = require('gulp-rename');
 var size        = require('gulp-filesize');
 var stripDebug  = require('gulp-strip-debug');
 
-gulp.task('uglifyJs', function() {
+gulp.task('uglifyJs', ['browserify'], function() {
   return gulp.src(config.src)
     .pipe(stripDebug())
     .pipe(uglify())

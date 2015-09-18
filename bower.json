@@ -17,10 +17,11 @@
     "tests"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.3",
-    "polymer": "Polymer/polymer#1.0.0"
+    "normalize.css": "~3.0.3"
   },
   "devDependencies": {
-    "HTML5-Reset": "~2.1.3"
+    "HTML5-Reset": "~2.1.3",
+    "jquery": "~2.1.4",
+    "riot": "~2.2.4"
   }
 }
