@@ -10,6 +10,7 @@ var gulp          = require('gulp'),
     sourcemaps    = require('gulp-sourcemaps'), // css sourcemaps
     lost          = require('lost'), // grid system
     atImport      = require('postcss-import'), // css imports
+    cssnano       = require('gulp-cssnano');
     //url           = require('postcss-url');
     //nestedProps = require('postcss-nested-props'), //nest common props
     nested        = require('postcss-nested'); // sass-style nesting 1.0.0
@@ -29,6 +30,8 @@ gulp.task('css', function() {
   return gulp.src(config.src)
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
+    .on('error', handleErrors)
+    .pipe(cssnano())
     .on('error', handleErrors)
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dest))
