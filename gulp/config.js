@@ -72,11 +72,9 @@ module.exports = {
       dest: dest + '/js',
       outputName: 'main.js',
       // Additional file extentions to make optional
-      extensions: ['.coffee', '.hbs'],
+      extensions: ['.coffee'],
       // list of modules to make require-able externally
       //require: []
-      // See https://github.com/greypants/gulp-starter/issues/87 for note about
-      // why this is 'backbone/node_modules/underscore' and not 'underscore'
     }, {
       entries: src + '/javascript/vendors.js',
       dest: dest + '/js',
