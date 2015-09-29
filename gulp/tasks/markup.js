@@ -5,5 +5,6 @@ var browserSync = require('browser-sync');
 gulp.task('markup', function() {
   return gulp.src(config.src)
     .pipe(gulp.dest(config.dest))
+    .pipe(gulp.dest(config.prod))
     .pipe(browserSync.stream());
 });

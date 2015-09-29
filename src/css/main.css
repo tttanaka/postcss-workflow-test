@@ -5,13 +5,22 @@
 
 :root { /* top level variables */
   --fontSize: 1rem; /* usage: font-size: var(--fontSize); */
+  --colorRed: #cc0000;
+}
+
+@define-placeholder colorRed {
+  color: var(--colorRed);
+}
+@define-placeholder colorRed-hover {
+  color: color(var(--colorRed) blackness(50%));
 }
 
 * {
-  outline: 1px dashed #ccc;
+  outline: 1px dashed #000;
 }
 body {
   background: #ccc;
+  transition: all 500ms ease-in-out;
 }
 .wrapper {
   lost-center: 980px;
@@ -20,16 +29,28 @@ body {
 #head {
   clear: fix;
   lost-column: 1/2;
+}
 
-  nav {
-    background-color: #fff;
+#head nav {
+  background-color: color(#ffffff blackness(50%));
+}
+#head nav li {
+  display: inline-block;
+  font-size: responsive 16px 30px;
+}
+#head nav a {
+  display: block;
+  background: #ccc;
+  transition: all 250ms ease-in-out;
+  @extend colorRed;
+
+  &:hover {
+      @extend colorRed-hover;
   }
-  nav li {
-    display: inline-block;
-    font-size: responsive 16px 30px;
-  }
-  nav a {
-    display: block;
-    background: #ccc;
+}
+
+@media (width >= 500px) and (width <= 700px) {
+  body {
+    background: color(#fff);
   }
 }

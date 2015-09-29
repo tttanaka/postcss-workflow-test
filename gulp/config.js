@@ -1,6 +1,9 @@
 var dest  = './build';
 var src   = './src';
 
+// for production
+var prod  = './dist';
+
 module.exports = {
 
   browserSync: {
@@ -15,7 +18,12 @@ module.exports = {
       cssnext: {
         customProperties: true,
         colorFunction: true,
-        customSelectors: true
+        customSelectors: true,
+        compress: false
+      },
+      rucksack: {
+        fallbacks: false,
+        autoprefixer: false
       },
       autoprefixer: {
         browsers: [
@@ -29,18 +37,10 @@ module.exports = {
       }
     } //settings
   },
-  minifyCss: {
-    src: dest + '/css/main.css',
-    dest: dest + '/css',
-    settings: {
-      rename: {
-        suffix: '.min'
-      }
-    }
-  },
   images: {
     src: src + '/images/**/*',
     dest: dest + '/images',
+    prod: prod + '/images',
     settings: {
       optimizationLevel: 3, // default: 3
       progressive: false, // default: false
@@ -52,16 +52,8 @@ module.exports = {
   },
   markup: {
     src: src + '/htdocs/**',
-    dest: dest
-  },
-  uglifyJs: {
-    src: dest + '/js/main.js',
-    dest: dest + '/js',
-    settings: {
-      rename: {
-        suffix: '.min'
-      }
-    }
+    dest: dest,
+    prod: prod
   },
   pluginsJs: {
     src: src + '/javascript/vendors/*.js',
@@ -96,9 +88,29 @@ module.exports = {
     ]
   },
   production: {
-    cssSrc: dest + '/*.css',
-    jsSrc: dest + '/*.js',
-    dest: dest
+    minifyCss: {
+      src: dest + '/css/*.css',
+      dest: prod + '/css',
+      settings: {
+        rename: {
+          suffix: '.min'
+        }
+      }
+    },
+    uglifyJs: {
+      src: dest + '/js/*.js',
+      dest: prod + '/js',
+      settings: {
+        rename: {
+          suffix: '.min'
+        }
+      }
+    },
+    images: {
+      src: dest + '/images/**/*',
+      dest: prod + '/images',
+    },
+    dest: prod
   }
 
 };
